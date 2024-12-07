@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="V1-info" author="DiplineRU">
+        <!-- это скрипт, который показывает откуда взять файл для миграции и что использовать для этого -->
+        <!--
+        encoding="utf8" тип кодировки базы
+                endDelimiter="\nGO" какую строку использовать для переключения между заданиями кода
+                relativeToChangelogFile="true" писать ли лог
+                splitStatements="true"
+                stripComments="true"
+                path="sql/01-wallets-create-table.sql" это путь относительно этого файла откуда брать sql
+        -->
+        <sqlFile
+                encoding="utf8"
+                endDelimiter="\nGO"
+                relativeToChangelogFile="true"
+                splitStatements="true"
+                stripComments="true"
+                path="sql/01-wallets-create-table.sql"
+        />
+        <!-- тут тоже самое, но это для удаления таблицы если нужно откатить миграцию -->
+        <rollback>
+            <sqlFile
+                    encoding="utf8"
+                    endDelimiter="\nGO"
+                    relativeToChangelogFile="true"
+                    splitStatements="true"
+                    stripComments="true"
+                    path="sql/01-wallets-drop-table.sql"
+            />
+        </rollback>
+    </changeSet>
+
+
+    <!-- автор созданной миграции author="author" -->
+    <changeSet id="1" author="author">
+        <!-- cоздание таблицы в базе данных с названием tableName="wallets" -->
+        <createTable tableName="wallets">
+            <!-- создание поля в таблице с названием name="id" и типом type="uuid"-->
+            <!-- type="uuid" такого типа в БД не существует / тут просто текст или варчар -->
+            <column name="id" type="uuid">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <!-- создание поля в таблице с названием name="balance" и типом type="bigint" этот есть -->
+            <column name="balance" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
