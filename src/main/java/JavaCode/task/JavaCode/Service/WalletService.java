@@ -1,11 +1,11 @@
-package JavaCode.task.JavaCode;
+package JavaCode.task.JavaCode.Service;
 
-import JavaCode.task.JavaCode.Wallet;
-import JavaCode.task.JavaCode.WalletRepository;
-import jakarta.transaction.Transactional;
+import JavaCode.task.JavaCode.Model.Wallet;
+import JavaCode.task.JavaCode.Service.ServiceInterface.WalletRepository;
+
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import javax.transaction.Transactional;
 import java.util.UUID;
 @Service
 public class WalletService {

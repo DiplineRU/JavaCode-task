@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet id="0" author="FeralHorse">
+        <tagDatabase tag="db_init"/><!-- инициализация подключения к БД-->
+    </changeSet>
+    <!-- Это подключение к файлу миграции с определенным содержимым ссылок на файлы -->
+    <include file="v-1.0/db.changelog-v.1.0.xml" relativeToChangelogFile="true"/>
+    <changeSet id="1" author="DiplineRU">
+        <tagDatabase tag="v.1.0"/>
+    </changeSet>
+
+
+</databaseChangeLog>

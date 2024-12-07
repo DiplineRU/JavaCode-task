@@ -1,11 +1,15 @@
-package JavaCode.task.JavaCode;
+package JavaCode.task.JavaCode.Model;
 
-import jakarta.persistence.*;
 
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.UUID;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+
 
 @Entity
 @Table(name = "wallets")

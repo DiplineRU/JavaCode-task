@@ -1,4 +1,4 @@
-package JavaCode.task.JavaCode;
+package JavaCode.task.JavaCode.Model;
 
 import java.util.UUID;
 

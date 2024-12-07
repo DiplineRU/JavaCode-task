@@ -1,6 +1,6 @@
-package JavaCode.task.JavaCode;
+package JavaCode.task.JavaCode.Service.ServiceInterface;
 
-import JavaCode.task.JavaCode.Wallet;
+import JavaCode.task.JavaCode.Model.Wallet;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
